@@ -7,7 +7,7 @@ namespace Snake
         public static void BuildBoard()
         {
             Console.Clear();
-            Console.WriteLine(" Car olinas amazing snake game        Use arrowkeys to move");
+            Console.WriteLine(" Carolinas amazing snake game        Use arrowkeys to move");
   
 
             for (int i = 1; i < 31; i++)
