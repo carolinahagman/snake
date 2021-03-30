@@ -4,5 +4,4 @@
 # SNAKE
 Play snake in the console!
 
-## Built with 
-C#
+- Built with C#
