@@ -34,6 +34,7 @@ namespace Snake
  ";
 
             Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Clear();
             Console.WriteLine(title);
             Console.WriteLine(" ");
         }
