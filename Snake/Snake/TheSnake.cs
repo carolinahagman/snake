@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Snake
 {
@@ -64,12 +65,19 @@ namespace Snake
                     GameOver = true;
                     var score = FoodEaten * 10;
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.SetCursorPosition(30, 10);
+                    Console.SetCursorPosition(30, 5);
                     Console.WriteLine("GAME OVER");
-                    Console.SetCursorPosition(30, 11);
+                    Console.SetCursorPosition(30, 6);
                     Console.WriteLine($"Score: {score}");
-                    Console.SetCursorPosition(20, 15);
+                    Console.SetCursorPosition(18, 7);
+                    Console.Write("Enter name for leaderboard:");
+                    Console.CursorVisible = true; 
+                    var name = Console.ReadLine();
+                    Console.CursorVisible = false;
+                    HttpService.PostScore(score, name);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Press ENTER to play again");
+
                 }
 
                 if (Console.KeyAvailable)
@@ -94,6 +102,12 @@ namespace Snake
                         break;
                 }
             }
+        }
+
+        private static async Task LeaderboardStuff(int score)
+        {
+            // HttpService.PostScore(score, "temp");
+            // Console.WriteLine(await HttpService.GetLeaderboard());
         }
 
         private static void ResetGameScore()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Snake
 {
@@ -7,6 +8,7 @@ namespace Snake
         static void Main(string[] args)
         {
             PrintTitle();
+
             var menuAnswer = GameMenu.ProvideMenuOptions();
             Console.CursorVisible = false;
             GameMenu.HandleMenuAnswer(menuAnswer);
@@ -15,7 +17,7 @@ namespace Snake
         private static void PrintTitle()
         {
             Console.Title = "Carolinas Snake";
-            const string title = @"            
+            const string title = @"       
       _    _
    ,-(|)--(|)-.
    \_   ..   _/
@@ -27,7 +29,9 @@ namespace Snake
         (^^^^\      __      _,-'^^^^^`.    _,'^^)
          \^^^^`._,-'^^`-._.'^^^^__^^^^ `--'^^^_/
           \^^^^^ ^^^_^^^^^^^_,-'  `.^^^^^^^^_/ 
-           `.____,-' `-.__.'        `-.___.'    ";
+           `.____,-' `-.__.'        `-.___.'    
+
+ ";
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(title);
