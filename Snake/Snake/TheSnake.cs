@@ -70,14 +70,13 @@ namespace Snake
                     Console.SetCursorPosition(30, 6);
                     Console.WriteLine($"Score: {score}");
                     Console.SetCursorPosition(18, 7);
-                    Console.Write("Enter name for leaderboard:");
-                    Console.CursorVisible = true; 
+                    Console.Write("Enter name for leaderboard: ");
+                    Console.CursorVisible = true;
                     var name = Console.ReadLine();
                     Console.CursorVisible = false;
                     HttpService.PostScore(score, name);
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Press ENTER to play again");
-
                 }
 
                 if (Console.KeyAvailable)
@@ -102,12 +101,6 @@ namespace Snake
                         break;
                 }
             }
-        }
-
-        private static async Task LeaderboardStuff(int score)
-        {
-            // HttpService.PostScore(score, "temp");
-            // Console.WriteLine(await HttpService.GetLeaderboard());
         }
 
         private static void ResetGameScore()

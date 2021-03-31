@@ -8,7 +8,7 @@ namespace Snake
 {
     public static class HttpService
     {
-        private static RestClient _client = new RestClient("http://localhost:5000");
+        private static RestClient _client = new RestClient("https://carolina-awesome-snake-backend.herokuapp.com");
 
         public static void GetLeaderboard()
         {

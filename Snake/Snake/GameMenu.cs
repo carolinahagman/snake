@@ -1,4 +1,5 @@
 using System;
+using System.Net.Mime;
 
 namespace Snake
 {
@@ -39,8 +40,22 @@ namespace Snake
                         Game.InitGame();
                         break;
                     case MenuOption.Exit:
-                        Console.WriteLine("You are fucking boring.");
-                        break;
+                       HttpService.GetLeaderboard();
+                       Console.ForegroundColor = ConsoleColor.Yellow;
+                       Console.WriteLine("You are lame. You should try to be more fun");
+                       Console.WriteLine("Press ENTER if you changed your mind and want to play");
+
+                       var key = Console.ReadKey().Key;
+                        if (key == ConsoleKey.Enter)
+                        {
+                            Game.InitGame();
+                        } 
+
+                           
+
+                       break;
+
+
                     default:
                         throw new ArgumentOutOfRangeException(nameof(answer),
                             answer, null);
